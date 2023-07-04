@@ -4,7 +4,6 @@ export async function fetchPlanetData(planetName) {
       `https://planets-api.vercel.app/api/v1/planets/${planetName}`
     );
     const planetData = await response.json();
-    console.log(planetData);
 
     const planetNameElement = document.querySelector('.planet-name');
     const planetImageElement = document.querySelector('.planet-image');

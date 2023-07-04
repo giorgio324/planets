@@ -8,6 +8,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+:root {
+  --mercury: rgb(65, 158, 187);
+  --venus: rgb(247, 204, 127);
+  --earth: rgb(84, 91, 254);
+  --mars: rgb(255, 106, 69);
+  --jupiter: rgb(236, 173, 122);
+  --saturn: rgb(252, 203, 107);
+  --uranus: rgb(101, 240, 213);
+  --neptune: rgb(73, 126, 250);
+}
 body {
   background-color: #070724;
   background-image: url(./assets/images/background-stars.svg);
@@ -40,10 +50,7 @@ nav h1 {
   font-size: 28px;
   font-weight: 400;
 }
-.link-underline.active {
-  height: 4px;
-  background-color: rgb(65, 158, 187);
-}
+
 .head-options-container {
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -82,6 +89,7 @@ nav h1 {
   color: #fff;
   font-weight: 500;
   font-size: 1.2rem;
+  text-transform: uppercase;
 }
 .hero {
   display: flex;
@@ -149,13 +157,52 @@ nav h1 {
   text-transform: capitalize;
 }
 @media screen and (min-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
   .links {
     display: flex;
     gap: 20px;
+    padding: 1.5rem 0;
+  }
+  .links li a {
+    font-size: 12px;
+    width: 50px;
+    text-align: center;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
   }
   .hamburger-button {
     display: none;
   }
 }
 @media screen and (min-width: 1440px) {
+  .links {
+    padding: 0;
+  }
+  nav {
+    flex-direction: row;
+    padding: 0 24px;
+    padding-bottom: 24px;
+    align-items: center;
+  }
+  .link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link-top-line {
+    height: 4px;
+    margin-bottom: 30px;
+    background: var(--mercury);
+    opacity: 0;
+    width: 100%;
+  }
+  .link-top-line.active {
+    opacity: 1;
+  }
+  .logo {
+    margin-top: 12px;
+  }
 }
