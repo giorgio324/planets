@@ -202,6 +202,7 @@ nav h1 {
   font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
 }
 .planet-description {
   font-size: 15px;
@@ -221,6 +222,7 @@ nav h1 {
   font-family: League Spartan;
   font-size: 13px;
   font-weight: 400;
+  text-align: center;
 }
 .source-container a {
   color: #fff;
@@ -250,6 +252,21 @@ nav h1 {
   color: #fff;
   opacity: 0.5;
   text-transform: capitalize;
+}
+.body-options {
+  display: none;
+}
+.planet-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   nav {
@@ -281,6 +298,64 @@ nav h1 {
   }
   .head-options-container {
     display: none;
+    width: 100%;
+  }
+  .planet-name,
+  .planet-description {
+    text-align: start;
+  }
+
+  .body-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .body-option {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid hsl(0, 0%, 100%, 0.2);
+    padding: 10px 20px;
+    font-family: 'league spartan', sans-serif;
+    cursor: pointer;
+    width: 300px;
+  }
+  .body-option.selected {
+    background-color: var(--mercury);
+  }
+  .body-option p {
+    opacity: 0.5;
+    letter-spacing: 1px;
+  }
+  .planet-name-options-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 30px;
+  }
+  .planet-name-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .planet-info-conainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .planet-info {
+    width: 200px;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border: 1px solid hsl(0, 0%, 100%, 0.2);
+  }
+  .planet-info p {
+    font-size: 25px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -317,5 +392,38 @@ nav h1 {
     width: 290px;
     height: 290px;
     margin: 95px;
+  }
+  .body-option:hover {
+    background: #d8d8d880;
+  }
+  .body-option {
+    padding: 12px 22px;
+
+    width: 370px;
+  }
+  .hero-container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .planet-name-options-container {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 400px;
+    padding: 20px;
+  }
+  .hero {
+    padding: 120px 165px;
+  }
+  .planet-info-conainer {
+    gap: 30px;
+    padding: 4rem 0;
+  }
+  .planet-info {
+    width: 240px;
+    padding: 30px;
+  }
+  .planet-info p {
+    font-size: 36px;
   }
 }
