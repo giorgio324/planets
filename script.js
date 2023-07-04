@@ -1,21 +1,29 @@
 import { fetchPlanetData } from './helpers/fetch.js';
 import { toggleActiveClass } from './helpers/toggleActiveClass.js';
-const planet = 'mercury';
+import { toggleNavbar } from './helpers/toggleNavbar.js';
+const startingPlanet = 'mercury';
 // when the page loads, fetch the data for the planet
 document.addEventListener('DOMContentLoaded', function () {
-  fetchPlanetData(planet);
+  fetchPlanetData(startingPlanet);
 });
 
 const handleClick = (e) => {
   e.preventDefault();
-  const planet = e.target.id;
+  let planet = e.target.closest('a').id;
+  console.log(planet);
   fetchPlanetData(planet);
   toggleActiveClass(e, planet);
-  e.target.parentElement
-    .querySelector('.link-top-line')
-    .classList.add('active');
 };
+const navButton = document.querySelector('.hamburger-button');
+navButton.addEventListener('click', toggleNavbar);
 const links = document.querySelectorAll('.link > a');
 links.forEach((link) => {
   link.addEventListener('click', handleClick);
+});
+const mobileLinks = document.querySelectorAll('.mobile-link > a');
+mobileLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    handleClick(e);
+    toggleNavbar();
+  });
 });
