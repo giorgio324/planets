@@ -2,7 +2,9 @@ import { fetchPlanetData } from './helpers/fetch.js';
 import { toggleActiveClass } from './helpers/toggleActiveClass.js';
 import { toggleNavbar } from './helpers/toggleNavbar.js';
 import { toggleOptionColor } from './helpers/toggleOptionColor.js';
+import { toggleOption } from './helpers/toggleOption.js';
 const startingPlanet = 'mercury';
+
 // when the page loads, fetch the data for the planet
 document.addEventListener('DOMContentLoaded', function () {
   fetchPlanetData(startingPlanet);
@@ -27,5 +29,11 @@ mobileLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
     handleClick(e);
     toggleNavbar();
+  });
+});
+const options = document.querySelectorAll('.head-option');
+options.forEach((option) => {
+  option.addEventListener('click', (e) => {
+    toggleOption(e);
   });
 });
