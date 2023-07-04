@@ -1,3 +1,4 @@
+import { updateUI } from './fetch.js';
 export let activeOptionText = 'overview';
 export const toggleOption = (e) => {
   document.querySelectorAll('.underline').forEach((underline) => {
@@ -14,4 +15,5 @@ export const toggleOption = (e) => {
   underline.classList.add('active');
   const pTag = parentElement.querySelector('p');
   activeOptionText = pTag.textContent || pTag.innerText;
+  updateUI();
 };
