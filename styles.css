@@ -167,6 +167,7 @@ nav h1 {
   align-items: center;
   font-family: 'League Spartan', sans-serif;
   font-weight: 700;
+  cursor: pointer;
 }
 .head-option p {
   opacity: 0.5;
@@ -174,7 +175,7 @@ nav h1 {
 .underline.active {
   height: 4px;
   width: 80px;
-  background-color: rgb(65, 158, 187);
+  background-color: var(--mercury);
 }
 .links {
   display: none;
@@ -278,6 +279,9 @@ nav h1 {
     height: 270px;
     margin: 95px;
   }
+  .head-options-container {
+    display: none;
+  }
 }
 @media screen and (min-width: 1440px) {
   .links {
@@ -308,5 +312,10 @@ nav h1 {
   }
   .logo {
     margin-top: 12px;
+  }
+  .planet-image {
+    width: 290px;
+    height: 290px;
+    margin: 95px;
   }
 }
