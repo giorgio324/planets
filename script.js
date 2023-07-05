@@ -4,6 +4,7 @@ import { toggleNavbar } from './helpers/toggleNavbar.js';
 import {
   toggleOptionColor,
   toggleBodyOptionColor,
+  resetToggleBodyOptionColor,
 } from './helpers/toggleOptionColor.js';
 import { toggleBodyOption, toggleOption } from './helpers/toggleOption.js';
 const startingPlanet = 'mercury';
@@ -21,6 +22,8 @@ const handleClick = (e) => {
   toggleActiveClass(e, planet);
   toggleOptionColor(planet);
   toggleBodyOptionColor(planet);
+  toggleBodyOption(e, true);
+  resetToggleBodyOptionColor();
 };
 const navButton = document.querySelector('.hamburger-button');
 navButton.addEventListener('click', toggleNavbar);

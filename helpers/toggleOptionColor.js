@@ -13,3 +13,8 @@ export function toggleBodyOptionColor(planet) {
     }
   });
 }
+export function resetToggleBodyOptionColor() {
+  document.querySelectorAll('.body-option').forEach((option) => {
+    option.style.backgroundColor = 'transparent';
+  });
+}

@@ -17,7 +17,12 @@ export const toggleOption = (e) => {
   activeOptionText = pTag.textContent || pTag.innerText;
   updateUI();
 };
-export const toggleBodyOption = (e) => {
+export const toggleBodyOption = (e, reset) => {
+  if (reset) {
+    activeOptionText = 'overview';
+    updateUI();
+    return;
+  }
   document.querySelectorAll('.body-option').forEach((option) => {
     option.classList.remove('selected');
   });
