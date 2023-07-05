@@ -1,10 +1,13 @@
 import { fetchPlanetData } from './helpers/fetch.js';
 import { toggleActiveClass } from './helpers/toggleActiveClass.js';
 import { toggleNavbar } from './helpers/toggleNavbar.js';
-import { toggleOptionColor } from './helpers/toggleOptionColor.js';
-import { toggleOption } from './helpers/toggleOption.js';
+import {
+  toggleOptionColor,
+  toggleBodyOptionColor,
+} from './helpers/toggleOptionColor.js';
+import { toggleBodyOption, toggleOption } from './helpers/toggleOption.js';
 const startingPlanet = 'mercury';
-
+let currentPlanet = startingPlanet;
 // when the page loads, fetch the data for the planet
 document.addEventListener('DOMContentLoaded', function () {
   fetchPlanetData(startingPlanet);
@@ -13,10 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 const handleClick = (e) => {
   e.preventDefault();
   let planet = e.target.closest('a').id;
-  console.log(planet);
+  currentPlanet = planet;
   fetchPlanetData(planet);
   toggleActiveClass(e, planet);
   toggleOptionColor(planet);
+  toggleBodyOptionColor(planet);
 };
 const navButton = document.querySelector('.hamburger-button');
 navButton.addEventListener('click', toggleNavbar);
@@ -35,5 +39,12 @@ const options = document.querySelectorAll('.head-option');
 options.forEach((option) => {
   option.addEventListener('click', (e) => {
     toggleOption(e);
+  });
+});
+const bodyOptions = document.querySelectorAll('.body-option');
+bodyOptions.forEach((option) => {
+  option.addEventListener('click', (e) => {
+    toggleBodyOption(e);
+    toggleBodyOptionColor(currentPlanet);
   });
 });

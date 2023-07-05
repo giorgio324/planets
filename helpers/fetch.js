@@ -56,11 +56,11 @@ export function updateUI() {
     imageKey = 'planet';
     descriptionKey = 'overview';
   }
-  if (key === 'structure') {
+  if (key === 'structure' || key === 'internal structure') {
     imageKey = 'internal';
     descriptionKey = 'structure';
   }
-  if (key === 'surface') {
+  if (key === 'surface' || key === 'surface geology') {
     imageKey = 'geology';
     descriptionKey = 'geology';
   }

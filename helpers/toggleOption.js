@@ -17,3 +17,23 @@ export const toggleOption = (e) => {
   activeOptionText = pTag.textContent || pTag.innerText;
   updateUI();
 };
+export const toggleBodyOption = (e) => {
+  document.querySelectorAll('.body-option').forEach((option) => {
+    option.classList.remove('selected');
+  });
+  const targetElement = e.target;
+
+  const parentElement = targetElement.classList.contains('body-option')
+    ? targetElement
+    : targetElement.parentElement;
+
+  parentElement.classList.add('selected');
+  const pTag = parentElement.querySelector('h2');
+  activeOptionText = pTag.textContent || pTag.innerText;
+  console.log(activeOptionText);
+  updateUI();
+};
+export const resetActiveOption = () => {
+  activeOptionText = 'overview';
+  console.log(activeOptionText);
+};
